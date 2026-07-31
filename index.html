@@ -1,279 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animated Pet Landing Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Sasikumar | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
 
-body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-    background:linear-gradient(-45deg,#6C63FF,#00C9A7,#5EE7DF,#B490CA);
-    background-size:400% 400%;
-    animation:bg 12s ease infinite;
-}
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(-45deg,#4F46E5,#06B6D4,#10B981,#7C3AED);
+            background-size:400% 400%;
+            animation:bgMove 12s ease infinite;
+            overflow:hidden;
+        }
 
-@keyframes bg{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
+        @keyframes bgMove{
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
+        }
 
-.card{
-    width:90%;
-    max-width:700px;
-    padding:40px;
-    border-radius:25px;
-    text-align:center;
-    backdrop-filter:blur(15px);
-    background:rgba(255,255,255,.15);
-    border:1px solid rgba(255,255,255,.25);
-    box-shadow:0 20px 50px rgba(0,0,0,.25);
-    color:white;
-}
+        .card{
+            width:90%;
+            max-width:750px;
+            background:rgba(255,255,255,.15);
+            backdrop-filter:blur(18px);
+            border:1px solid rgba(255,255,255,.25);
+            border-radius:25px;
+            padding:45px;
+            text-align:center;
+            color:white;
+            box-shadow:0 20px 50px rgba(0,0,0,.3);
+            animation:fadeUp 1s ease;
+        }
 
-h1{
-    font-size:3rem;
-}
+        @keyframes fadeUp{
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
 
-p{
-    margin:20px 0;
-    line-height:1.7;
-}
+        .profile{
+            width:150px;
+            height:150px;
+            margin:auto;
+            border-radius:50%;
+            background:linear-gradient(135deg,#ffffff,#dbeafe);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:65px;
+            color:#4F46E5;
+            font-weight:bold;
+            border:5px solid rgba(255,255,255,.6);
+            animation:float 3s ease-in-out infinite;
+        }
 
-button{
-    padding:14px 30px;
-    border:none;
-    border-radius:40px;
-    background:white;
-    color:#5b4bff;
-    font-size:17px;
-    cursor:pointer;
-    transition:.3s;
-}
+        @keyframes float{
+            50%{
+                transform:translateY(-12px);
+            }
+        }
 
-button:hover{
-    transform:scale(1.08);
-}
+        h1{
+            margin-top:25px;
+            font-size:2.8rem;
+        }
 
-/* Floating bubbles */
+        h3{
+            font-weight:400;
+            margin:10px 0 20px;
+            color:#f0f0f0;
+        }
 
-.bubble{
-    position:absolute;
-    border-radius:50%;
-    background:rgba(255,255,255,.12);
-    animation:float 12s linear infinite;
-}
+        p{
+            line-height:1.8;
+            font-size:17px;
+            color:#f5f5f5;
+        }
 
-.b1{
-    width:160px;
-    height:160px;
-    left:8%;
-    top:10%;
-}
+        .info{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:15px;
+            margin-top:35px;
+        }
 
-.b2{
-    width:250px;
-    height:250px;
-    right:-60px;
-    bottom:-60px;
-}
+        .box{
+            background:rgba(255,255,255,.12);
+            padding:18px;
+            border-radius:15px;
+            transition:.3s;
+        }
 
-.b3{
-    width:90px;
-    height:90px;
-    left:25%;
-    bottom:12%;
-}
+        .box:hover{
+            transform:translateY(-8px);
+            background:rgba(255,255,255,.22);
+        }
 
-@keyframes float{
-    50%{
-        transform:translateY(-25px);
-    }
-}
+        .btn{
+            display:inline-block;
+            margin-top:35px;
+            padding:15px 35px;
+            text-decoration:none;
+            background:white;
+            color:#4F46E5;
+            border-radius:40px;
+            font-weight:600;
+            transition:.3s;
+        }
 
-/* PET */
+        .btn:hover{
+            transform:scale(1.08);
+        }
 
-.pet{
-    width:170px;
-    margin:20px auto;
-    animation:bounce 2s ease-in-out infinite;
-}
+        .circle{
+            position:absolute;
+            border-radius:50%;
+            background:rgba(255,255,255,.08);
+            animation:move 10s infinite ease-in-out;
+        }
 
-@keyframes bounce{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-18px);
-    }
-}
+        .c1{
+            width:180px;
+            height:180px;
+            top:5%;
+            left:5%;
+        }
 
-.head{
-    width:120px;
-    height:110px;
-    background:#FFD79A;
-    border-radius:50%;
-    margin:auto;
-    position:relative;
-}
+        .c2{
+            width:250px;
+            height:250px;
+            bottom:-80px;
+            right:-60px;
+        }
 
-.ear{
-    width:35px;
-    height:55px;
-    background:#C98A45;
-    position:absolute;
-    top:-20px;
-    border-radius:20px;
-}
-
-.left-ear{
-    left:5px;
-    transform:rotate(-25deg);
-}
-
-.right-ear{
-    right:5px;
-    transform:rotate(25deg);
-}
-
-.eye{
-    width:12px;
-    height:12px;
-    background:#222;
-    border-radius:50%;
-    position:absolute;
-    top:42px;
-    animation:blink 5s infinite;
-}
-
-.left-eye{
-    left:35px;
-}
-
-.right-eye{
-    right:35px;
-}
-
-@keyframes blink{
-    0%,47%,100%{
-        height:12px;
-    }
-    48%,50%{
-        height:2px;
-    }
-}
-
-.nose{
-    width:18px;
-    height:14px;
-    background:#333;
-    border-radius:50%;
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    top:62px;
-}
-
-.mouth{
-    position:absolute;
-    width:24px;
-    height:14px;
-    border-bottom:3px solid #333;
-    border-radius:0 0 20px 20px;
-    left:50%;
-    transform:translateX(-50%);
-    top:76px;
-}
-
-.body{
-    width:90px;
-    height:90px;
-    background:#FFD79A;
-    margin:0 auto;
-    margin-top:-8px;
-    border-radius:25px;
-    position:relative;
-}
-
-.tail{
-    position:absolute;
-    width:45px;
-    height:8px;
-    background:#C98A45;
-    right:-32px;
-    top:25px;
-    transform-origin:left center;
-    animation:wag .35s infinite alternate;
-}
-
-@keyframes wag{
-    from{
-        transform:rotate(20deg);
-    }
-    to{
-        transform:rotate(-20deg);
-    }
-}
-</style>
+        @keyframes move{
+            50%{
+                transform:translateY(-30px);
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="bubble b1"></div>
-<div class="bubble b2"></div>
-<div class="bubble b3"></div>
+<div class="circle c1"></div>
+<div class="circle c2"></div>
 
 <div class="card">
 
-    <div class="pet">
+    <div class="profile">AS</div>
 
-        <div class="head">
-            <div class="ear left-ear"></div>
-            <div class="ear right-ear"></div>
-
-            <div class="eye left-eye"></div>
-            <div class="eye right-eye"></div>
-
-            <div class="nose"></div>
-            <div class="mouth"></div>
-        </div>
-
-        <div class="body">
-            <div class="tail"></div>
-        </div>
-
-    </div>
-
-    <h1>🐶 Welcome!</h1>
+    <h1>Abhishek Sasikumar</h1>
+    <h3>💻 Student | Web Developer | Tech Enthusiast</h3>
 
     <p>
-        Welcome to my website.It is created by Abhishek Sasikumar
-        Meet your friendly animated puppy! It happily bounces,
-        blinks its eyes, and wags its tail while greeting visitors
-        to your website.
+        Hello! I'm <strong>Abhishek Sasikumar</strong>. I enjoy creating modern,
+        responsive websites and learning new technologies. I love programming,
+        designing attractive user interfaces, and building creative projects.
     </p>
 
-    <button onclick="petMe()">🐾 Pet Me</button>
+    <div class="info">
+        <div class="box">
+            <h2>🎓 Education</h2>
+            <p>Your College / School</p>
+        </div>
+
+        <div class="box">
+            <h2>💻 Skills</h2>
+            <p>HTML • CSS • JavaScript • Python</p>
+        </div>
+
+        <div class="box">
+            <h2>🚀 Interests</h2>
+            <p>Web Development, AI, UI Design</p>
+        </div>
+
+        <div class="box">
+            <h2>📧 Contact</h2>
+            <p>your@email.com</p>
+        </div>
+    </div>
+
+    <a href="#" class="btn" onclick="showMessage()">Say Hello 👋</a>
 
 </div>
 
 <script>
-function petMe(){
-    alert("🐶 Woof! Thanks for the pets! ❤️");
+function showMessage(){
+    alert("Hello! I'm Abhishek Sasikumar. Thanks for visiting my portfolio!");
 }
 </script>
 
